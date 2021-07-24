@@ -1,1 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-21T22:43:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">코린이 탈출기</title><subtitle>Welcome to my homepage!</subtitle><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-24T13:05:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">포뇨의 애옥살이</title><subtitle>Welcome to my homepage!</subtitle><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><entry><title type="html">이것이 코딩테스트다 with python</title><link href="http://localhost:4000/categories/" rel="alternate" type="text/html" title="이것이 코딩테스트다 with python" /><published>2021-07-24T00:00:00+09:00</published><updated>2021-07-24T00:00:00+09:00</updated><id>http://localhost:4000/codingtest</id><content type="html" xml:base="http://localhost:4000/categories/">&lt;ul&gt;
+  &lt;li&gt;문제
+    &lt;ul&gt;
+      &lt;li&gt;8 x 8  좌표 평면에서 나이트는 다음과 같은 2가지 경우로 이동할 수 있다.&lt;/li&gt;
+      &lt;li&gt;수평으로 두 칸 이동한 뒤에 수직으로 한 이동하기&lt;/li&gt;
+      &lt;li&gt;수직으로 두 칸 이동한 뒤에 수평으로 한 칸 이동하기&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;나이트의 위치가 주어졌을 때 나이트가 이동할 수 있는 경우의 수를 출력하는 프로그램을 작성하시오 &lt;br /&gt;
+이 때 왕실의 정원에서 행 위치를 표현할 때는 1부터 8로 표현하면, 열 위치를 표현할 때는 a부터 h까지 표현한다. &lt;br /&gt;
+&lt;b&gt; 입력 예시 &lt;/b&gt; &lt;br /&gt;
+a1 &lt;br /&gt;
+&lt;b&gt; 출력 예시 &lt;/b&gt; &lt;br /&gt;
+2&lt;/p&gt;
+
+&lt;p&gt;구현에 앞서 값들을 받아오는 작업을 수행해야합니다. &lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;column&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><category term="Python" /><summary type="html">문제 8 x 8 좌표 평면에서 나이트는 다음과 같은 2가지 경우로 이동할 수 있다. 수평으로 두 칸 이동한 뒤에 수직으로 한 이동하기 수직으로 두 칸 이동한 뒤에 수평으로 한 칸 이동하기</summary></entry></feed>
