@@ -1,7 +1,11 @@
 ---
-title : 이것이 코딩테스트다 with python
-permalink : /categories/
-tags : Python
+title : "[이것이 코딩테스트다 with  Python]01.왕실의 나이트"
+excerpt: "이것이 코딩테스트다 with  Python"
+tags : 
+    - codingtest
+categories : 
+    - codingtest
+
 
 ---
 * 문제
@@ -11,8 +15,10 @@ tags : Python
 
 나이트의 위치가 주어졌을 때 나이트가 이동할 수 있는 경우의 수를 출력하는 프로그램을 작성하시오 <br>
 이 때 왕실의 정원에서 행 위치를 표현할 때는 1부터 8로 표현하면, 열 위치를 표현할 때는 a부터 h까지 표현한다. <br>
+
 <b> 입력 예시 </b> <br>
 a1 <br>
+
 <b> 출력 예시 </b> <br>
 2
 
@@ -22,4 +28,11 @@ a1 <br>
 ```python
 column = a[1]
 row = int(ord(a[0])) - int(ord(a)) + 1
+```
+
+값을 받아온 후에 나이트가 움직일 수 있는 경우의 수를 계산하는 코드를 작성해보도록 하겠습니다.
+
+
+```python
+
 ```

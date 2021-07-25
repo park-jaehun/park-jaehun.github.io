@@ -1,0 +1,554 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[SQL 정복하기]테이블에서 데이터 검색 - 포뇨의 애옥살이</title>
+<meta name="description" content="SQL 첫 걸음">
+
+
+  <meta name="author" content="jerryPark">
+  
+  <meta property="article:author" content="jerryPark">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="포뇨의 애옥살이">
+<meta property="og:title" content="[SQL 정복하기]테이블에서 데이터 검색">
+<meta property="og:url" content="http://localhost:4000/sql/SQL/">
+
+
+  <meta property="og:description" content="SQL 첫 걸음">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-07-25T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/sql/SQL/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "jerryPark",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="포뇨의 애옥살이 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          포뇨의 애옥살이
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/setting/bio-photo.png" alt="jerryPark" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">jerryPark</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Just do it</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:pjhun58@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/park-jaehun" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://blog.naver.com/pjhun58" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">네이버 블로그</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:pjhun588@gmail.com">
+            <meta itemprop="email" content="pjhun588@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[SQL 정복하기]테이블에서 데이터 검색">
+    <meta itemprop="description" content="SQL 첫 걸음">
+    <meta itemprop="datePublished" content="2021-07-25T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[SQL 정복하기]테이블에서 데이터 검색
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>코딩 테스트를 준비하면서 생각보다 SQL 문제가 많이 출제 되어서 기본적인 문법을 바탕을 정리하고 문제들을 풀어보는 방식으로 진행하겠습니다.</p>
+
+<p>실제로 SQL은 조회부분이 가장 많이 쓰이고, 중요합니다. 이 부분을 중점으로 공부하도록 하겠습니다. 그럼 바로 시작하겠습니다.</p>
+
+<h1 id="1-select--from-테이블명">1. SELECT * FROM 테이블명</h1>
+<p>SELECT와 그리고 FROM 사이에는 스페이스를 넣어서 구분합니다. 입력이 끝나면 명령의 마지막을 나타내는 세미콜론(;)을 넣은 뒤 Enter를 누르면 됩니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM SAMPLE21;
+</code></pre></div></div>
+
+<p>테이블의 열은 많아야 몇십 개 정도지만 행은 열에 비해 훨씬 많을 수 있습니다. 데이터베이스의 규모에 따라서 다르지만 일반적으로 수백 건에서 대규모의 경우 수천만 건의 행에 달하는 경우도 있습니다. 이처럼 많은 행 속에서 필요한 데이터만 검색하기 위해서는 WHERE 구를 사용합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># where구로 name 열 값이 '박준용'인 행만 출력
+
+SELECT * FROM SAMPLE21 WHERE name = '박준용';
+</code></pre></div></div>
+<p>name 열은 no 열과 자료형이 다른 문자열형입니다. 수치형 조건식의 경우 비교할 숫자를 그대로 조건식에 표기합니다. 하지만 문자열형을 비교할 경우는 ‘박준용’처럼  <strong>싱글쿼트</strong>로 둘러싸 표기합니다.</p>
+
+<p>그럼 SELECT문법을 익혀보도록 하겠습니다.</p>
+
+<p><strong>- 값이 서로 다른 경우 ‘&lt;&gt;’</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM sample21 WHERE no &lt;&gt; 2;
+</code></pre></div></div>
+
+<p>**- NULL 값 검색 **</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM SAMPLE21 WHERE birthday IS NULL;
+</code></pre></div></div>
+
+<p>null 값을 검색할 경우에는 IS NULL을 사용합니다!
+다음으로 살펴볼 문법은 비교연산자인데 다른 프로그래밍 언어 유사하기 때문에 넘어가도록 하겠습니다. 다만 주의할점은 등호일 경우 ‘==’이 아닌 ‘=’임을 주의하시길 바랍니다.</p>
+
+<h1 id="2-조건-조합하기">2. 조건 조합하기</h1>
+<p><strong>- 1. AND로 조합하기</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM sample24 WHERE a&lt;&gt;0 AND b&lt;&gt;0;
+</code></pre></div></div>
+<p>**-2. OR 조합하기 **</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM sample24 WHERE a&lt;&gt;0 OR b&lt;&gt;0;
+</code></pre></div></div>
+
+<p><strong>-3. NOT으로 조합하기</strong>
+a열이 0이 아니거나 b열이 0이 아닌 행을 제외한 나머지 행을 검색</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM sample24 WHERE NOT(a&lt;&gt;0 OR b&lt;&gt;0);
+</code></pre></div></div>
+
+<h1 id="3-패턴-매칭에-의한-검색">3. 패턴 매칭에 의한 검색</h1>
+
+<p>like 술어를 사용하여 패턴 매칭으로 검색할 수 있습니다. 패턴을 정의할 때는 사용할 수 있는 메타문자로는 %와 _이 있습니다. 두 개의 차이점이 있다면 %는 임의의 문자열을 의미하며 _는 임의의 문자 하나만을 의미합니다. 그렇다보니 패턴 매칭을 사용할 시에는 _보다는 %를 좀 많이 사용하는 경향이 있습니다.</p>
+
+<ul>
+  <li>전방일치: SQL은 RDBMS를 ….-&gt; SQL%</li>
+  <li>중간일치: LIKE는 SQL에서 사용 …..-&gt; %SQL%</li>
+  <li>후방일치: 입문 SQL -&gt; %SQL</li>
+</ul>
+
+<p># 4.정렬과 연산
+age 열의 값을 오름차순으로 정렬하기</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM sample31 ORDER BY age;
+</code></pre></div></div>
+
+<h1 id="내림차순-정렬">내림차순 정렬</h1>
+
+<pre><code class="language-SQL">SELECT * FROM sample31 ORDER BY age DESC;
+</code></pre>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#sql" class="page__taxonomy-item" rel="tag">SQL</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#sql" class="page__taxonomy-item" rel="tag">SQL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-07-25T00:00:00+09:00">July 25, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BSQL+%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0%5D%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%90%EC%84%9C+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EA%B2%80%EC%83%89%20http%3A%2F%2Flocalhost%3A4000%2Fsql%2FSQL%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsql%2FSQL%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsql%2FSQL%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/codingtest/codingtest/" class="pagination--pager" title="[이것이 코딩테스트다 with  Python]01.왕실의 나이트
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/codingtest/codingtest/" rel="permalink">[이것이 코딩테스트다 with  Python]01.왕실의 나이트
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">이것이 코딩테스트다 with  Python
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/park-jaehun" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://blog.naver.com/pjhun58" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> 네이버 블로그</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 jerryPark. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
