@@ -327,13 +327,29 @@ a1 <br /></p>
 <p>구현에 앞서 값들을 받아오는 작업을 수행해야합니다. <br /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">column</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span> <span class="o">+</span> <span class="mi">1</span>
 </code></pre></div></div>
 
-<p>값을 받아온 후에 나이트가 움직일 수 있는 경우의 수를 계산하는 코드를 작성해보도록 하겠습니다.</p>
+<p>값을 받아온 후에 나이트가 움직일 수 있는 경우의 수를 계산하는 코드를 작성해보도록 하겠습니다.
+현재의 위치에서 총 8가지 방향으로 움직일 수 있게 됩니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">),(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
 </code></pre></div></div>
+
+<p>움직인 방향에서 해당 공간내에서만 이동이 가능하기 때문에 나이트가 이동할 수 있는 공간에 대하여 카운팅을
+해보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="n">steps</span><span class="p">:</span>
+    <span class="n">col</span> <span class="o">=</span> <span class="n">columns</span> <span class="o">+</span> <span class="n">step</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="n">step</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">row</span> <span class="o">&gt;=</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">row</span> <span class="o">&lt;=</span><span class="mi">8</span> <span class="ow">and</span> <span class="n">column</span> <span class="o">&gt;=</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">column</span> <span class="o">&lt;=</span><span class="mi">8</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+<p>결과적으로 a1을 입력하게 되면 출력결과가 2가 나옴을 알 수 있습니다.</p>
+
 
         
       </section>

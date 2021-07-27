@@ -27,12 +27,30 @@ a1 <br>
 
 ```python
 column = a[1]
-row = int(ord(a[0])) - int(ord(a)) + 1
+row = int(ord(a[0]) - int(ord(a))) + 1
 ```
 
 값을 받아온 후에 나이트가 움직일 수 있는 경우의 수를 계산하는 코드를 작성해보도록 하겠습니다.
-
+현재의 위치에서 총 8가지 방향으로 움직일 수 있게 됩니다.
 
 ```python
-
+result = 0
+steps = [(1,-2),(1,2),(-1,-2),(-1,2),(-2,-1),(-2,1),(2,-1),(2,1)]
 ```
+
+움직인 방향에서 해당 공간내에서만 이동이 가능하기 때문에 나이트가 이동할 수 있는 공간에 대하여 카운팅을
+해보도록 하겠습니다.
+
+```python
+for step in steps:
+    col = columns + step[1]
+    rows = row + step[0]
+    if row >=1 and row <=8 and column >=1 and column <=8:
+        result += 1
+
+print(result)
+```
+결과적으로 a1을 입력하게 되면 출력결과가 2가 나옴을 알 수 있습니다.
+
+
+
