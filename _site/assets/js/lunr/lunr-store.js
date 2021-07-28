@@ -10,4 +10,10 @@ var store = [{
         "tags": ["SQL"],
         "url": "/sql/SQL/",
         "teaser": null
+      },{
+        "title": "[이것이 코딩테스트다 with  Python]02.게임 개발",
+        "excerpt":"문제 게임의 맵은 N x M 형태의 직사각형이고 맵의 각 칸은 (A, B)로 나타낼 수 있고 A는 북쪽으로부터 떨어진 칸의 개수, B는 서쪽으로부터 떨어진 칸의 개수이다. 캐릭터는 상하좌우로 움직일 수 있고, 바다로 되어 있는 공간에는 갈 수 없다. 캐릭터의 움직임을 설정하기 위해 정해놓은 메뉴얼은 이렇다. - 현재 위치에서 현재 방향을...","categories": ["codingtest"],
+        "tags": ["codingtest"],
+        "url": "/codingtest/codingtest/",
+        "teaser": null
       }]
