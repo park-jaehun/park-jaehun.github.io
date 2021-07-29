@@ -1,44 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-29T08:11:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">포뇨의 애옥살이</title><subtitle>Welcome to my homepage!</subtitle><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><entry><title type="html">[이것이 코딩테스트다 with Python]02.게임 개발</title><link href="http://localhost:4000/codingtest/codingtest/" rel="alternate" type="text/html" title="[이것이 코딩테스트다 with Python]02.게임 개발" /><published>2021-07-28T00:00:00+09:00</published><updated>2021-07-28T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/codingtest</id><content type="html" xml:base="http://localhost:4000/codingtest/codingtest/">&lt;p&gt;&lt;b&gt; 문제
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-29T22:13:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">포뇨의 애옥살이</title><subtitle>Welcome to my homepage!</subtitle><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><entry><title type="html">[이것이 코딩테스트다 with Python]02.게임 개발</title><link href="http://localhost:4000/codingtest/codingtest/" rel="alternate" type="text/html" title="[이것이 코딩테스트다 with Python]02.게임 개발" /><published>2021-07-28T00:00:00+09:00</published><updated>2021-07-28T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/codingtest</id><content type="html" xml:base="http://localhost:4000/codingtest/codingtest/">&lt;p&gt;&lt;b&gt; 문제&lt;/b&gt;&lt;br /&gt;
 게임의 맵은 N x M 형태의 직사각형이고 맵의 각 칸은 (A, B)로 나타낼 수 있고 A는 북쪽으로부터 떨어진 칸의 개수, B는 서쪽으로부터 떨어진
-칸의 개수이다. 캐릭터는 상하좌우로 움직일 수 있고, 바다로 되어 있는 공간에는 갈 수 없다. 캐릭터의 움직임을 설정하기 위해 정해놓은 메뉴얼은 이렇다.&lt;/b&gt;&lt;/p&gt;
+칸의 개수이다. 캐릭터는 상하좌우로 움직일 수 있고, 바다로 되어 있는 공간에는 갈 수 없다. 캐릭터의 움직임을 설정하기 위해 정해놓은 메뉴얼은 이렇다.&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 현재 위치에서 현재 방향을 기준으로 왼쪽 방향(반시계 방향으로 90도 회전한 방향)부터
-차례대로 갈 곳을 정한다.
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;현재 위치에서 현재 방향을 기준으로 왼쪽 방향(반시계 방향으로 90도 회전한 방향)부터
+차례대로 갈 곳을 정한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;캐릭터의 바로 왼쪽 방향에 아직 가보지 않은 칸이 존재한다면, 왼쪽 방향으로 회전한 다음 왼쪽으로 한 칸을 전진한다.
+왼쪽 방향에 가보지 않은 칸이 없다면, 왼쪽 방향으로 회전만 수행하고 1단계로 돌아간다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;만약 네 방향 모두 이미 기본 칸이거나 바다로 되어 있는 칸인 경우에는, 바라보는 방향을 유지한 채로 한 칸 뒤로 가고 1단계
+돌아간다. 단, 이때 뒤쪽 방향이 바다인 칸이라 뒤로 갈 수 없는 경우에는 움직임을 멈춘다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-- 캐릭터의 바로 왼쪽 방향에 아직 가보지 않은 칸이 존재한다면, 왼쪽 방향으로 회전한 다음 왼쪽으로 한 칸을 전진한다.
-왼쪽 방향에 가보지 않은 칸이 없다면, 왼쪽 방향으로 회전만 수행하고 1단계로 돌아간다.
-
-- 만약 네 방향 모두 이미 기본 칸이거나 바다로 되어 있는 칸인 경우에는, 바라보는 방향을 유지한 채로 한 칸 뒤로 가고 1단계
-돌아간다. 단, 이때 뒤쪽 방향이 바다인 칸이라 뒤로 갈 수 없는 경우에는 움직임을 멈춘다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;b&gt; 입력 조건&lt;/b&gt;
+&lt;p&gt;&lt;b&gt; 입력 조건&lt;/b&gt;&lt;br /&gt;
 첫째 줄에 맵의 세로 크기가 N과 가로 크기 M을 공백으로 구분하여 입력한다.(3 &amp;lt;= N, M&amp;lt;=50)  &lt;br /&gt;
 둘째 줄에 게임 캐릭터가 있는 칸의 좌표(A,B)와 바라보는 방향 d가 각각 서로 공백으로 구분하여 주어진다. &lt;br /&gt;
-방향 d의 값으로는 다음과 같이 4가지가 존재한다.  &lt;br /&gt;
-    - 0: 북쪽 &lt;br /&gt;
-    - 1: 동쪽 &lt;br /&gt;
-    - 2: 남쪽 &lt;br /&gt;
-    - 3: 서쪽  &lt;br /&gt;
-셋째 줄부터 맵이 육지인지 바다인지에 대한 정보가 주어진다. N개의 줄에 맵의 상태가 북쪽부터 남쪽 순서대로, 각 줄의 데이터는  &lt;br /&gt;
-서쪽부터 동쪽 순서대로 주어진다. 맵의 외괵은 항상 바다로 되어 있다.  &lt;br /&gt;
-    - 0: 육지 &lt;br /&gt;
-    - 1: 바다 &lt;br /&gt;
-    처음에 게임 캐릭터가 위치한 칸의 상태는 항상 육지이다. &lt;br /&gt;
+방향 d의 값으로는 다음과 같이 4가지가 존재한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;0: 북쪽&lt;/li&gt;
+  &lt;li&gt;1: 동쪽&lt;/li&gt;
+  &lt;li&gt;2: 남쪽&lt;/li&gt;
+  &lt;li&gt;3: 서쪽&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;셋째 줄부터 맵이 육지인지 바다인지에 대한 정보가 주어진다. N개의 줄에 맵의 상태가 북쪽부터 남쪽 순서대로, 각 줄의 데이터는  &lt;br /&gt;
+서쪽부터 동쪽 순서대로 주어진다. 맵의 외괵은 항상 바다로 되어 있다.  &lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;0: 육지 &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;1: 바다 &lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;처음에 게임 캐릭터가 위치한 칸의 상태는 항상 육지이다. &lt;br /&gt;
 출력조건: 첫째 줄에 이동을 마친후 캐릭터가 방문한 칸의 수를 출력 &lt;br /&gt;&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;p&gt;&lt;b&gt; 입력 예시 &lt;/b&gt; &lt;br /&gt;
-4 4
-1 1 0
-1 1 1 1
-1 0 0 1
-1 1 0 1
+4 4 &lt;br /&gt;
+1 1 0 &lt;br /&gt;
+1 1 1 1 &lt;br /&gt;
+1 0 0 1 &lt;br /&gt;
+1 1 0 1 &lt;br /&gt;
 1 1 1 1&lt;/p&gt;
 
 &lt;p&gt;&lt;b&gt; 출력 예시 &lt;/b&gt; &lt;br /&gt;
 3&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;구현에 앞서 값들을 받아오는 작업을 수행해야합니다. &lt;br /&gt;&lt;/p&gt;</content><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><category term="codingtest" /><category term="codingtest" /><summary type="html">이것이 코딩테스트다 with Python</summary></entry><entry><title type="html">[SQL 정복하기]테이블에서 데이터 검색</title><link href="http://localhost:4000/sql/SQL/" rel="alternate" type="text/html" title="[SQL 정복하기]테이블에서 데이터 검색" /><published>2021-07-25T00:00:00+09:00</published><updated>2021-07-25T00:00:00+09:00</updated><id>http://localhost:4000/sql/SQL</id><content type="html" xml:base="http://localhost:4000/sql/SQL/">&lt;p&gt;코딩 테스트를 준비하면서 생각보다 SQL 문제가 많이 출제 되어서 기본적인 문법을 바탕을 정리하고 문제들을 풀어보는 방식으로 진행하겠습니다.&lt;/p&gt;
+&lt;p&gt;구현에 앞서 값들을 받아오는 작업을 수행해야합니다.&lt;/p&gt;
+
+&lt;p&gt;’&apos;’python
+n, m = map(int, input().split())&lt;/p&gt;
+
+&lt;p&gt;’’’&lt;/p&gt;</content><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><category term="codingtest" /><category term="codingtest" /><summary type="html">이것이 코딩테스트다 with Python</summary></entry><entry><title type="html">[SQL 정복하기]테이블에서 데이터 검색</title><link href="http://localhost:4000/sql/SQL/" rel="alternate" type="text/html" title="[SQL 정복하기]테이블에서 데이터 검색" /><published>2021-07-25T00:00:00+09:00</published><updated>2021-07-25T00:00:00+09:00</updated><id>http://localhost:4000/sql/SQL</id><content type="html" xml:base="http://localhost:4000/sql/SQL/">&lt;p&gt;코딩 테스트를 준비하면서 생각보다 SQL 문제가 많이 출제 되어서 기본적인 문법을 바탕을 정리하고 문제들을 풀어보는 방식으로 진행하겠습니다.&lt;/p&gt;
 
 &lt;p&gt;실제로 SQL은 조회부분이 가장 많이 쓰이고, 중요합니다. 이 부분을 중점으로 공부하도록 하겠습니다. 그럼 바로 시작하겠습니다.&lt;/p&gt;
 
@@ -104,15 +125,10 @@ age 열의 값을 오름차순으로 정렬하기&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h1 id=&quot;내림차순-정렬&quot;&gt;내림차순 정렬&lt;/h1&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM sample31 ORDER BY age DESC;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><category term="SQL" /><category term="SQL" /><summary type="html">SQL 첫 걸음</summary></entry><entry><title type="html">[이것이 코딩테스트다 with Python]01.왕실의 나이트</title><link href="http://localhost:4000/codingtest/codingtest/" rel="alternate" type="text/html" title="[이것이 코딩테스트다 with Python]01.왕실의 나이트" /><published>2021-07-24T00:00:00+09:00</published><updated>2021-07-24T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/codingtest</id><content type="html" xml:base="http://localhost:4000/codingtest/codingtest/">&lt;ul&gt;
-  &lt;li&gt;문제
-    &lt;ul&gt;
-      &lt;li&gt;8 x 8  좌표 평면에서 나이트는 다음과 같은 2가지 경우로 이동할 수 있다.&lt;/li&gt;
-      &lt;li&gt;수평으로 두 칸 이동한 뒤에 수직으로 한 이동하기&lt;/li&gt;
-      &lt;li&gt;수직으로 두 칸 이동한 뒤에 수평으로 한 칸 이동하기&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><category term="SQL" /><category term="SQL" /><summary type="html">SQL 첫 걸음</summary></entry><entry><title type="html">[이것이 코딩테스트다 with Python]01.왕실의 나이트</title><link href="http://localhost:4000/codingtest/codingtest/" rel="alternate" type="text/html" title="[이것이 코딩테스트다 with Python]01.왕실의 나이트" /><published>2021-07-24T00:00:00+09:00</published><updated>2021-07-24T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/codingtest</id><content type="html" xml:base="http://localhost:4000/codingtest/codingtest/">&lt;p&gt;문제
+    - 8 x 8  좌표 평면에서 나이트는 다음과 같은 2가지 경우로 이동할 수 있다.
+    - 수평으로 두 칸 이동한 뒤에 수직으로 한 이동하기
+    - 수직으로 두 칸 이동한 뒤에 수평으로 한 칸 이동하기&lt;/p&gt;
 
 &lt;p&gt;나이트의 위치가 주어졌을 때 나이트가 이동할 수 있는 경우의 수를 출력하는 프로그램을 작성하시오 &lt;br /&gt;
 이 때 왕실의 정원에서 행 위치를 표현할 때는 1부터 8로 표현하면, 열 위치를 표현할 때는 a부터 h까지 표현한다. &lt;br /&gt;&lt;/p&gt;
