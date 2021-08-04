@@ -2,7 +2,7 @@
 title : "[이것이 코딩테스트다 with  Python]01.왕실의 나이트"
 excerpt: "이것이 코딩테스트다 with  Python"
 tags : 
-    - codingtest
+    - python
 categories : 
     - codingtest
 

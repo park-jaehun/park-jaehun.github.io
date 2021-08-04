@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[SQL 정복하기]테이블에서 데이터 검색 - 포뇨의 애옥살이</title>
-<meta name="description" content="SQL 첫 걸음">
+<!-- begin _includes/seo.html --><title>[이것이 코딩테스트다 with  Python]02.게임 개발 - 포뇨의 애옥살이</title>
+<meta name="description" content="이것이 코딩테스트다 with  Python">
 
 
   <meta name="author" content="jerryPark">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="포뇨의 애옥살이">
-<meta property="og:title" content="[SQL 정복하기]테이블에서 데이터 검색">
-<meta property="og:url" content="http://localhost:4000/sql/SQL/">
+<meta property="og:title" content="[이것이 코딩테스트다 with  Python]02.게임 개발">
+<meta property="og:url" content="http://localhost:4000/codingtest/codingtest1/">
 
 
-  <meta property="og:description" content="SQL 첫 걸음">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-07-25T00:00:00+09:00">
+  <meta property="og:description" content="이것이 코딩테스트다 with  Python">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-07-28T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/sql/SQL/">
+
+<link rel="canonical" href="http://localhost:4000/codingtest/codingtest1/">
 
 
 
@@ -267,15 +267,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[SQL 정복하기]테이블에서 데이터 검색">
-    <meta itemprop="description" content="SQL 첫 걸음">
-    <meta itemprop="datePublished" content="2021-07-25T00:00:00+09:00">
+    <meta itemprop="headline" content="[이것이 코딩테스트다 with  Python]02.게임 개발">
+    <meta itemprop="description" content="이것이 코딩테스트다 with  Python">
+    <meta itemprop="datePublished" content="2021-07-28T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[SQL 정복하기]테이블에서 데이터 검색
+          <h1 id="page-title" class="page__title" itemprop="headline">[이것이 코딩테스트다 with  Python]02.게임 개발
 </h1>
           
 
@@ -303,73 +303,74 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>코딩 테스트를 준비하면서 생각보다 SQL 문제가 많이 출제 되어서 기본적인 문법을 바탕을 정리하고 문제들을 풀어보는 방식으로 진행하겠습니다.</p>
-
-<p>실제로 SQL은 조회부분이 가장 많이 쓰이고, 중요합니다. 이 부분을 중점으로 공부하도록 하겠습니다. 그럼 바로 시작하겠습니다.</p>
-
-<h1 id="1-select--from-테이블명">1. SELECT * FROM 테이블명</h1>
-<p>SELECT와 그리고 FROM 사이에는 스페이스를 넣어서 구분합니다. 입력이 끝나면 명령의 마지막을 나타내는 세미콜론(;)을 넣은 뒤 Enter를 누르면 됩니다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM SAMPLE21;
-</code></pre></div></div>
-
-<p>테이블의 열은 많아야 몇십 개 정도지만 행은 열에 비해 훨씬 많을 수 있습니다. 데이터베이스의 규모에 따라서 다르지만 일반적으로 수백 건에서 대규모의 경우 수천만 건의 행에 달하는 경우도 있습니다. 이처럼 많은 행 속에서 필요한 데이터만 검색하기 위해서는 WHERE 구를 사용합니다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># where구로 name 열 값이 '박준용'인 행만 출력
-
-SELECT * FROM SAMPLE21 WHERE name = '박준용';
-</code></pre></div></div>
-<p>name 열은 no 열과 자료형이 다른 문자열형입니다. 수치형 조건식의 경우 비교할 숫자를 그대로 조건식에 표기합니다. 하지만 문자열형을 비교할 경우는 ‘박준용’처럼  <strong>싱글쿼트</strong>로 둘러싸 표기합니다.</p>
-
-<p>그럼 SELECT문법을 익혀보도록 하겠습니다.</p>
-
-<p><strong>- 값이 서로 다른 경우 ‘&lt;&gt;’</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM sample21 WHERE no &lt;&gt; 2;
-</code></pre></div></div>
-
-<p>**- NULL 값 검색 **</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM SAMPLE21 WHERE birthday IS NULL;
-</code></pre></div></div>
-
-<p>null 값을 검색할 경우에는 IS NULL을 사용합니다!
-다음으로 살펴볼 문법은 비교연산자인데 다른 프로그래밍 언어 유사하기 때문에 넘어가도록 하겠습니다. 다만 주의할점은 등호일 경우 ‘==’이 아닌 ‘=’임을 주의하시길 바랍니다.</p>
-
-<h1 id="2-조건-조합하기">2. 조건 조합하기</h1>
-<p><strong>- 1. AND로 조합하기</strong></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM sample24 WHERE a&lt;&gt;0 AND b&lt;&gt;0;
-</code></pre></div></div>
-<p>**-2. OR 조합하기 **</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM sample24 WHERE a&lt;&gt;0 OR b&lt;&gt;0;
-</code></pre></div></div>
-
-<p><strong>-3. NOT으로 조합하기</strong>
-a열이 0이 아니거나 b열이 0이 아닌 행을 제외한 나머지 행을 검색</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM sample24 WHERE NOT(a&lt;&gt;0 OR b&lt;&gt;0);
-</code></pre></div></div>
-
-<h1 id="3-패턴-매칭에-의한-검색">3. 패턴 매칭에 의한 검색</h1>
-
-<p>like 술어를 사용하여 패턴 매칭으로 검색할 수 있습니다. 패턴을 정의할 때는 사용할 수 있는 메타문자로는 %와 _이 있습니다. 두 개의 차이점이 있다면 %는 임의의 문자열을 의미하며 _는 임의의 문자 하나만을 의미합니다. 그렇다보니 패턴 매칭을 사용할 시에는 _보다는 %를 좀 많이 사용하는 경향이 있습니다.</p>
+        <p><b> 문제</b><br />
+게임의 맵은 N x M 형태의 직사각형이고 맵의 각 칸은 (A, B)로 나타낼 수 있고 A는 북쪽으로부터 떨어진 칸의 개수, B는 서쪽으로부터 떨어진
+칸의 개수이다. 캐릭터는 상하좌우로 움직일 수 있고, 바다로 되어 있는 공간에는 갈 수 없다. 캐릭터의 움직임을 설정하기 위해 정해놓은 메뉴얼은 이렇다.</p>
 
 <ul>
-  <li>전방일치: SQL은 RDBMS를 ….-&gt; SQL%</li>
-  <li>중간일치: LIKE는 SQL에서 사용 …..-&gt; %SQL%</li>
-  <li>후방일치: 입문 SQL -&gt; %SQL</li>
+  <li>
+    <p>현재 위치에서 현재 방향을 기준으로 왼쪽 방향(반시계 방향으로 90도 회전한 방향)부터
+차례대로 갈 곳을 정한다.</p>
+  </li>
+  <li>
+    <p>캐릭터의 바로 왼쪽 방향에 아직 가보지 않은 칸이 존재한다면, 왼쪽 방향으로 회전한 다음 왼쪽으로 한 칸을 전진한다.
+왼쪽 방향에 가보지 않은 칸이 없다면, 왼쪽 방향으로 회전만 수행하고 1단계로 돌아간다.</p>
+  </li>
+  <li>
+    <p>만약 네 방향 모두 이미 기본 칸이거나 바다로 되어 있는 칸인 경우에는, 바라보는 방향을 유지한 채로 한 칸 뒤로 가고 1단계
+돌아간다. 단, 이때 뒤쪽 방향이 바다인 칸이라 뒤로 갈 수 없는 경우에는 움직임을 멈춘다.</p>
+  </li>
 </ul>
 
-<p># 4.정렬과 연산
-age 열의 값을 오름차순으로 정렬하기</p>
+<p><b> 입력 조건</b><br />
+첫째 줄에 맵의 세로 크기가 N과 가로 크기 M을 공백으로 구분하여 입력한다.(3 &lt;= N, M&lt;=50)  <br />
+둘째 줄에 게임 캐릭터가 있는 칸의 좌표(A,B)와 바라보는 방향 d가 각각 서로 공백으로 구분하여 주어진다. <br />
+방향 d의 값으로는 다음과 같이 4가지가 존재한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM sample31 ORDER BY age;
-</code></pre></div></div>
+<ul>
+  <li>0: 북쪽</li>
+  <li>1: 동쪽</li>
+  <li>2: 남쪽</li>
+  <li>3: 서쪽</li>
+</ul>
 
-<p><br /></p>
-<h1 id="내림차순-정렬">내림차순 정렬</h1>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM sample31 ORDER BY age DESC;
-</code></pre></div></div>
+<p>셋째 줄부터 맵이 육지인지 바다인지에 대한 정보가 주어진다. N개의 줄에 맵의 상태가 북쪽부터 남쪽 순서대로, 각 줄의 데이터는  <br />
+서쪽부터 동쪽 순서대로 주어진다. 맵의 외괵은 항상 바다로 되어 있다.  <br /></p>
+
+<ul>
+  <li>0: 육지 <br /></li>
+  <li>1: 바다 <br /></li>
+</ul>
+
+<p>처음에 게임 캐릭터가 위치한 칸의 상태는 항상 육지이다. <br />
+출력조건: 첫째 줄에 이동을 마친후 캐릭터가 방문한 칸의 수를 출력 <br /></p>
+
+<hr />
+
+<p><b> 입력 예시 </b> <br />
+4 4 <br />
+1 1 0 <br />
+1 1 1 1 <br />
+1 0 0 1 <br />
+1 1 0 1 <br />
+1 1 1 1</p>
+
+<p><b> 출력 예시 </b> <br />
+3</p>
+<hr />
+
+<p>구현에 앞서 값들을 받아오는 작업을 수행해야합니다.</p>
+
+<pre>
+<code>
+n,m = map(int, input().split())
+
+
+
+
+
+</code>
+</pre>
 
 
         
@@ -387,7 +388,7 @@ age 열의 값을 오름차순으로 정렬하기</p>
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#sql" class="page__taxonomy-item" rel="tag">SQL</a>
+      <a href="/tags/#codingtest" class="page__taxonomy-item" rel="tag">codingtest</a>
     
     </span>
   </p>
@@ -404,7 +405,7 @@ age 열의 값을 오름차순으로 정렬하기</p>
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#sql" class="page__taxonomy-item" rel="tag">SQL</a>
+      <a href="/categories/#codingtest" class="page__taxonomy-item" rel="tag">codingtest</a>
     
     </span>
   </p>
@@ -412,7 +413,7 @@ age 열의 값을 오름차순으로 정렬하기</p>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-07-25T00:00:00+09:00">July 25, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-07-28T00:00:00+09:00">July 28, 2021</time></p>
 
 
       </footer>
@@ -422,22 +423,22 @@ age 열의 값을 오름차순으로 정렬하기</p>
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BSQL+%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0%5D%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%90%EC%84%9C+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EA%B2%80%EC%83%89%20http%3A%2F%2Flocalhost%3A4000%2Fsql%2FSQL%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9D%B4%EA%B2%83%EC%9D%B4+%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8B%A4+with++Python%5D02.%EA%B2%8C%EC%9E%84+%EA%B0%9C%EB%B0%9C%20http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsql%2FSQL%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsql%2FSQL%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/codingtest/codingtest0/" class="pagination--pager" title="[이것이 코딩테스트다 with  Python]01.왕실의 나이트
+      <a href="/sql/SQL/" class="pagination--pager" title="[SQL 정복하기]테이블에서 데이터 검색
 ">이전</a>
     
     
-      <a href="/codingtest/codingtest1/" class="pagination--pager" title="[이것이 코딩테스트다 with  Python]02.게임 개발
+      <a href="/codingtest/codingtest2/" class="pagination--pager" title="[이것이 코딩테스트다 with  Python]03.DFS 예제
 ">다음</a>
     
   </nav>
@@ -502,7 +503,7 @@ age 열의 값을 오름차순으로 정렬하기</p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/codingtest/codingtest1/" rel="permalink">[이것이 코딩테스트다 with  Python]02.게임 개발
+        <a href="/sql/SQL/" rel="permalink">[SQL 정복하기]테이블에서 데이터 검색
 </a>
       
     </h2>
@@ -527,7 +528,7 @@ age 열의 값을 오름차순으로 정렬하기</p>
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">이것이 코딩테스트다 with  Python
+    <p class="archive__item-excerpt" itemprop="description">SQL 첫 걸음
 </p>
   </article>
 </div>
