@@ -56,14 +56,10 @@ categories :
 
 구현에 앞서 값들을 받아오는 작업을 수행해야합니다.
 
-<pre>
-<code>
+
+```python
+
 n,m = map(int, input().split())
 
-
-
-
-
-</code>
-</pre>
+```
 

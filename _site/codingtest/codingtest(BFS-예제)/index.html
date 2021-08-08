@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[이것이 코딩테스트다 with  Python]01.왕실의 나이트 - 포뇨의 애옥살이</title>
+<!-- begin _includes/seo.html --><title>[이것이 코딩테스트다 with  Python]04.BFS 예제 - 포뇨의 애옥살이</title>
 <meta name="description" content="이것이 코딩테스트다 with  Python">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="포뇨의 애옥살이">
-<meta property="og:title" content="[이것이 코딩테스트다 with  Python]01.왕실의 나이트">
-<meta property="og:url" content="http://localhost:4000/codingtest/codingtest0/">
+<meta property="og:title" content="[이것이 코딩테스트다 with  Python]04.BFS 예제">
+<meta property="og:url" content="http://localhost:4000/codingtest/codingtest(BFS-%EC%98%88%EC%A0%9C)/">
 
 
   <meta property="og:description" content="이것이 코딩테스트다 with  Python">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-07-24T00:00:00+09:00">
+  <meta property="article:published_time" content="2021-08-04T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/codingtest/codingtest0/">
+<link rel="canonical" href="http://localhost:4000/codingtest/codingtest(BFS-%EC%98%88%EC%A0%9C)/">
 
 
 
@@ -267,15 +267,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[이것이 코딩테스트다 with  Python]01.왕실의 나이트">
+    <meta itemprop="headline" content="[이것이 코딩테스트다 with  Python]04.BFS 예제">
     <meta itemprop="description" content="이것이 코딩테스트다 with  Python">
-    <meta itemprop="datePublished" content="2021-07-24T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2021-08-04T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[이것이 코딩테스트다 with  Python]01.왕실의 나이트
+          <h1 id="page-title" class="page__title" itemprop="headline">[이것이 코딩테스트다 with  Python]04.BFS 예제
 </h1>
           
 
@@ -303,45 +303,23 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>문제
-    - 8 x 8  좌표 평면에서 나이트는 다음과 같은 2가지 경우로 이동할 수 있다.
-    - 수평으로 두 칸 이동한 뒤에 수직으로 한 이동하기
-    - 수직으로 두 칸 이동한 뒤에 수평으로 한 칸 이동하기</p>
+        <p>저번 chapter에 이이서 이번에는 BFS를 구현해보도록 하겠습니다. 너비 우선 탐색 알고리즘은 <br />
+큐 자료구조에 기초한다는 점과 탐색을 수행함에 있어 O(N)의 시간이 소요된다. <br />
+일반적인 경우 실제 DFS보다 수행하는 시간이 효율적임을 알 수 있다.</p>
 
-<p>나이트의 위치가 주어졌을 때 나이트가 이동할 수 있는 경우의 수를 출력하는 프로그램을 작성하시오 <br />
-이 때 왕실의 정원에서 행 위치를 표현할 때는 1부터 8로 표현하면, 열 위치를 표현할 때는 a부터 h까지 표현한다. <br /></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collection</span> <span class="kn">import</span> <span class="n">deque</span>
+<span class="k">def</span> <span class="nf">BFS</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">visited</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="n">start</span><span class="p">])</span>
+    <span class="n">visited</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
+                <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s">" "</span><span class="p">)</span>
 
-<p><b> 입력 예시 </b> <br />
-a1 <br /></p>
-
-<p><b> 출력 예시 </b> <br />
-2</p>
-
-<p>구현에 앞서 값들을 받아오는 작업을 수행해야합니다. <br /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">column</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span> <span class="o">+</span> <span class="mi">1</span>
 </code></pre></div></div>
-
-<p>값을 받아온 후에 나이트가 움직일 수 있는 경우의 수를 계산하는 코드를 작성해보도록 하겠습니다.
-현재의 위치에서 총 8가지 방향으로 움직일 수 있게 됩니다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">steps</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">),(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
-</code></pre></div></div>
-
-<p>움직인 방향에서 해당 공간내에서만 이동이 가능하기 때문에 나이트가 이동할 수 있는 공간에 대하여 카운팅을
-해보도록 하겠습니다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="n">steps</span><span class="p">:</span>
-    <span class="n">col</span> <span class="o">=</span> <span class="n">columns</span> <span class="o">+</span> <span class="n">step</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">rows</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="n">step</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">row</span> <span class="o">&gt;=</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">row</span> <span class="o">&lt;=</span><span class="mi">8</span> <span class="ow">and</span> <span class="n">column</span> <span class="o">&gt;=</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">column</span> <span class="o">&lt;=</span><span class="mi">8</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</code></pre></div></div>
-<p>결과적으로 a1을 입력하게 되면 출력결과가 2가 나옴을 알 수 있습니다.</p>
 
 
         
@@ -359,7 +337,7 @@ a1 <br /></p>
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#python" class="page__taxonomy-item" rel="tag">python</a>
+      <a href="/tags/#codingtest" class="page__taxonomy-item" rel="tag">codingtest</a>
     
     </span>
   </p>
@@ -384,7 +362,7 @@ a1 <br /></p>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-07-24T00:00:00+09:00">July 24, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-08-04T00:00:00+09:00">August 4, 2021</time></p>
 
 
       </footer>
@@ -394,22 +372,22 @@ a1 <br /></p>
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9D%B4%EA%B2%83%EC%9D%B4+%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8B%A4+with++Python%5D01.%EC%99%95%EC%8B%A4%EC%9D%98+%EB%82%98%EC%9D%B4%ED%8A%B8%20http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9D%B4%EA%B2%83%EC%9D%B4+%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8B%A4+with++Python%5D04.BFS+%EC%98%88%EC%A0%9C%20http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest%28BFS-%25EC%2598%2588%25EC%25A0%259C%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest%28BFS-%25EC%2598%2588%25EC%25A0%259C%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest%28BFS-%25EC%2598%2588%25EC%25A0%259C%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">이전</a>
+      <a href="/codingtest/codingtest(DFS-%EC%98%88%EC%A0%9C)/" class="pagination--pager" title="[이것이 코딩테스트다 with  Python]03.DFS 예제
+">이전</a>
     
     
-      <a href="/sql/SQL/" class="pagination--pager" title="[SQL 정복하기]테이블에서 데이터 검색
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -433,7 +411,7 @@ a1 <br /></p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/codingtest/codingtest2/" rel="permalink">[이것이 코딩테스트다 with  Python]03.DFS 예제
+        <a href="/codingtest/codingtest(DFS-%EC%98%88%EC%A0%9C)/" rel="permalink">[이것이 코딩테스트다 with  Python]03.DFS 예제
 </a>
       
     </h2>
@@ -473,7 +451,7 @@ a1 <br /></p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/codingtest/codingtest1/" rel="permalink">[이것이 코딩테스트다 with  Python]02.게임 개발
+        <a href="/codingtest/codingtest(%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C)/" rel="permalink">[이것이 코딩테스트다 with  Python]02.게임 개발
 </a>
       
     </h2>
@@ -539,6 +517,46 @@ a1 <br /></p>
 
 
     <p class="archive__item-excerpt" itemprop="description">SQL 첫 걸음
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/codingtest/codingtest(%EC%99%95%EC%8B%A4%EC%9D%98-%EB%82%98%EC%9D%B4%ED%8A%B8)/" rel="permalink">[이것이 코딩테스트다 with  Python]01.왕실의 나이트
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">이것이 코딩테스트다 with  Python
 </p>
   </article>
 </div>
