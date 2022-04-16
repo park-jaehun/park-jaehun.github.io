@@ -30,7 +30,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[SQL 정복하기]데이터 변환함수 및 헷갈리는 표현",
-        "excerpt":"입사 후 교육을 듣는데 헷갈리는 표현들이 몇 가지 존재했습니다. 이 부분을 정확히 숙지하고 업무에 투입되면 좋을 것 같아 포스팅을 진행해보도돌 하겠습니다.   1. TO_CHAR  TO_CHAR는 숫자 또는 날짜를 문자타입으로 변환시켜주는 함수입니다.  SELECT 기준일자        ,TO_CHAR(영업일수)        ,TO_CHAR(기준일자, 'YYYYMMDD') FROM 기준일자정보   ","categories": ["SQL"],
+        "excerpt":"입사 후 교육을 듣는데 헷갈리는 표현들이 몇 가지 존재했습니다. 이 부분을 정확히 숙지하고 업무에 투입되면 좋을 것 같아 포스팅을 진행해보도도록 하겠습니다. 1. TO_CHAR TO_CHAR는 숫자 또는 날짜를 문자타입으로 변환시켜주는 함수입니다. SELECT 기준일자 ,TO_CHAR(영업일수) ,TO_CHAR(기준일자, 'YYYYMMDD') FROM 기준일자정보 2. WITH vs INLINE VIEW 업무를 하면서 특히 두 가지 문법을 사용할 때가...","categories": ["SQL"],
         "tags": ["SQL","Oracle"],
         "url": "/sql/SQL/",
         "teaser": null
