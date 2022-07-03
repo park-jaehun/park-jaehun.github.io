@@ -8,7 +8,7 @@ var store = [{
         "title": "[SQL 정복하기]테이블에서 데이터 검색",
         "excerpt":"코딩 테스트를 준비하면서 생각보다 SQL 문제가 많이 출제 되어서 기본적인 문법을 바탕을 정리하고 문제들을 풀어보는 방식으로 진행하겠습니다. 실제로 SQL은 조회부분이 가장 많이 쓰이고, 중요합니다. 이 부분을 중점으로 공부하도록 하겠습니다. 그럼 바로 시작하겠습니다. 1. SELECT * FROM 테이블명 SELECT와 그리고 FROM 사이에는 스페이스를 넣어서 구분합니다. 입력이 끝나면 명령의 마지막을 나타내는 세미콜론(;)을...","categories": ["SQL"],
         "tags": ["SQL"],
-        "url": "/sql/SQL/",
+        "url": "/sql/SQL(2)/",
         "teaser": null
       },{
         "title": "[이것이 코딩테스트다 with  Python]02.게임 개발",
@@ -29,9 +29,15 @@ var store = [{
         "url": "/codingtest/codingtest(BFS-%EC%98%88%EC%A0%9C)/",
         "teaser": null
       },{
+        "title": "[SAS 정복하기]DATA SET 활용",
+        "excerpt":"안녕하세요 포뇨입니다. 이번에는 SAS에 대해서 갼략하게 설명 후 바로 문법적으로 설명드리도록 하겠습니다. SAS는 기본적으로 SQL 문법과 매우 흡사하고 특히 금융권 취업을 희망하면 기본적으로 알아야하는 툴입니다.   그러면 첫 단원으로 DATA SET을 활용하여 문법을 익혀보도록 하겠습니다.  ","categories": ["SAS"],
+        "tags": ["SAS"],
+        "url": "/sas/SAS(1)/",
+        "teaser": null
+      },{
         "title": "[SQL 정복하기]데이터 변환함수 및 헷갈리는 표현",
         "excerpt":"입사 후 교육을 듣는데 헷갈리는 표현들이 몇 가지 존재했습니다. 이 부분을 정확히 숙지하고 업무에 투입되면 좋을 것 같아 포스팅을 진행해보도도록 하겠습니다. 1. TO_CHAR TO_CHAR는 숫자 또는 날짜를 문자타입으로 변환시켜주는 함수입니다. SELECT 기준일자 ,TO_CHAR(영업일수) ,TO_CHAR(기준일자, 'YYYYMMDD') FROM 기준일자정보 2. WITH vs INLINE VIEW 업무를 하면서 특히 두 가지 문법을 사용할 때가...","categories": ["SQL"],
         "tags": ["SQL","Oracle"],
-        "url": "/sql/SQL/",
+        "url": "/sql/SQL(1)/",
         "teaser": null
       }]
