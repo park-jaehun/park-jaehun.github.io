@@ -30,7 +30,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[SAS 정복하기]DATA SET 활용",
-        "excerpt":"안녕하세요 포뇨입니다. 이번에는 SAS에 대해서 갼략하게 설명 후 바로 문법적으로 설명드리도록 하겠습니다. SAS는 기본적으로 SQL 문법과 매우 흡사하고 특히 금융권 취업을 희망하면 기본적으로 알아야하는 툴입니다.   그러면 첫 단원으로 DATA SET을 활용하여 문법을 익혀보도록 하겠습니다.  ","categories": ["SAS"],
+        "excerpt":"안녕하세요 포뇨입니다. 이번에는 SAS에 대해서 갼략하게 설명 후 바로 문법적으로 설명드리도록 하겠습니다. SAS는 기본적으로 SQL 문법과 매우 흡사하고 특히 금융권 취업을 희망하면 기본적으로 알아야하는 툴입니다. 그러면 첫 단원으로 DATA SET을 활용하여 문법을 익혀보도록 하겠습니다. 1. DATA SET 생성(1/3) 기존 DATA문 DATA AAA; 2. DATA SET 생성(2/3) data stockprice1; &lt;br&gt; input...","categories": ["SAS"],
         "tags": ["SAS"],
         "url": "/sas/SAS(1)/",
         "teaser": null
