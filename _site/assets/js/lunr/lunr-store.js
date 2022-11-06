@@ -30,7 +30,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[SAS 정복하기]DATA SET 활용",
-        "excerpt":"안녕하세요 포뇨입니다. 이번에는 SAS에 대해서 갼략하게 설명 후 바로 문법적으로 설명드리도록 하겠습니다. SAS는 기본적으로 SQL 문법과 매우 흡사하고 특히 금융권 취업을 희망하면 기본적으로 알아야하는 툴입니다. 그러면 첫 단원으로 DATA SET을 활용하여 문법을 익혀보도록 하겠습니다. 1. DATA SET 생성(1/3) 기존 DATA문 DATA AAA; 2. DATA SET 생성(2/3) data stockprice1; &lt;br&gt; input...","categories": ["SAS"],
+        "excerpt":"안녕하세요 포뇨입니다. 이번에는 SAS에 대해서 갼략하게 설명 후 바로 문법적으로 설명드리도록 하겠습니다. SAS는 기본적으로 SQL 문법과 매우 흡사하고 특히 금융권 취업을 희망하면 기본적으로 알아야하는 툴입니다. 그러면 첫 단원으로 DATA SET을 활용하여 문법을 익혀보도록 하겠습니다. 1. DATA SET 생성(1/3) 기존 DATA문 DATA AAA; 2. DATA SET 생성(2/3) data stockprice1; input name$price...","categories": ["SAS"],
         "tags": ["SAS"],
         "url": "/sas/SAS(1)/",
         "teaser": null
@@ -39,5 +39,11 @@ var store = [{
         "excerpt":"입사 후 교육을 듣는데 헷갈리는 표현들이 몇 가지 존재했습니다. 이 부분을 정확히 숙지하고 업무에 투입되면 좋을 것 같아 포스팅을 진행해보도도록 하겠습니다. 1. TO_CHAR TO_CHAR는 숫자 또는 날짜를 문자타입으로 변환시켜주는 함수입니다. SELECT 기준일자 ,TO_CHAR(영업일수) ,TO_CHAR(기준일자, 'YYYYMMDD') FROM 기준일자정보 2. WITH vs INLINE VIEW 업무를 하면서 특히 두 가지 문법을 사용할 때가...","categories": ["SQL"],
         "tags": ["SQL","Oracle"],
         "url": "/sql/SQL(1)/",
+        "teaser": null
+      },{
+        "title": "[Python - matplotlib] 01.box-plot",
+        "excerpt":"박스 플롯 또는 박스-위스커 플롯 (Box - Whisker plot)은 수치 데이터를 표현하는 하나의 방식입니다. 일반적으로 박스 플롯은 전체 데이터로부터 얻어진 아래의 다섯가지 요약 수치를 사용해서 그려집니다. 최솟값 제 1사분위 수 제 3사분위 수 최댓값 사분위 수는 데이터를 4등분한 지점을 의미합니다. 예를 들어, 제 1사분위 수는 전체 데이터 중 하위 25%에...","categories": ["python"],
+        "tags": ["python"],
+        "url": "/python/Python(1)/",
         "teaser": null
       }]

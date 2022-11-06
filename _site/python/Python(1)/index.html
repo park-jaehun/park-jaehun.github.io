@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[이것이 코딩테스트다 with  Python]02.게임 개발 - 포뇨의 애옥살이</title>
-<meta name="description" content="이것이 코딩테스트다 with  Python">
+<!-- begin _includes/seo.html --><title>[Python - matplotlib] 01.box-plot - 포뇨의 애옥살이</title>
+<meta name="description" content="box-plot 이해">
 
 
   <meta name="author" content="jerryPark">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="포뇨의 애옥살이">
-<meta property="og:title" content="[이것이 코딩테스트다 with  Python]02.게임 개발">
-<meta property="og:url" content="http://localhost:4000/codingtest/codingtest(%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C)/">
+<meta property="og:title" content="[Python - matplotlib] 01.box-plot">
+<meta property="og:url" content="http://localhost:4000/python/Python(1)/">
 
 
-  <meta property="og:description" content="이것이 코딩테스트다 with  Python">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-07-28T00:00:00+09:00">
+  <meta property="og:description" content="box-plot 이해">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2022-11-05T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/codingtest/codingtest(%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C)/">
+
+<link rel="canonical" href="http://localhost:4000/python/Python(1)/">
 
 
 
@@ -267,201 +267,17 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[이것이 코딩테스트다 with  Python]02.게임 개발">
-    <meta itemprop="description" content="이것이 코딩테스트다 with  Python">
-    <meta itemprop="datePublished" content="2021-07-28T00:00:00+09:00">
+    <meta itemprop="headline" content="[Python - matplotlib] 01.box-plot">
+    <meta itemprop="description" content="box-plot 이해">
+    <meta itemprop="datePublished" content="2022-11-05T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[이것이 코딩테스트다 with  Python]02.게임 개발
+          <h1 id="page-title" class="page__title" itemprop="headline">[Python - matplotlib] 01.box-plot
 </h1>
           
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-        </header>
-      
-
-      <section class="page__content" itemprop="text">
-        
-        <p><b> 문제</b><br />
-게임의 맵은 N x M 형태의 직사각형이고 맵의 각 칸은 (A, B)로 나타낼 수 있고 A는 북쪽으로부터 떨어진 칸의 개수, B는 서쪽으로부터 떨어진
-칸의 개수이다. 캐릭터는 상하좌우로 움직일 수 있고, 바다로 되어 있는 공간에는 갈 수 없다. 캐릭터의 움직임을 설정하기 위해 정해놓은 메뉴얼은 이렇다.</p>
-
-<ul>
-  <li>
-    <p>현재 위치에서 현재 방향을 기준으로 왼쪽 방향(반시계 방향으로 90도 회전한 방향)부터
-차례대로 갈 곳을 정한다.</p>
-  </li>
-  <li>
-    <p>캐릭터의 바로 왼쪽 방향에 아직 가보지 않은 칸이 존재한다면, 왼쪽 방향으로 회전한 다음 왼쪽으로 한 칸을 전진한다.
-왼쪽 방향에 가보지 않은 칸이 없다면, 왼쪽 방향으로 회전만 수행하고 1단계로 돌아간다.</p>
-  </li>
-  <li>
-    <p>만약 네 방향 모두 이미 기본 칸이거나 바다로 되어 있는 칸인 경우에는, 바라보는 방향을 유지한 채로 한 칸 뒤로 가고 1단계
-돌아간다. 단, 이때 뒤쪽 방향이 바다인 칸이라 뒤로 갈 수 없는 경우에는 움직임을 멈춘다.</p>
-  </li>
-</ul>
-
-<p><b> 입력 조건</b><br />
-첫째 줄에 맵의 세로 크기가 N과 가로 크기 M을 공백으로 구분하여 입력한다.(3 &lt;= N, M&lt;=50)  <br />
-둘째 줄에 게임 캐릭터가 있는 칸의 좌표(A,B)와 바라보는 방향 d가 각각 서로 공백으로 구분하여 주어진다. <br />
-방향 d의 값으로는 다음과 같이 4가지가 존재한다.</p>
-
-<ul>
-  <li>0: 북쪽</li>
-  <li>1: 동쪽</li>
-  <li>2: 남쪽</li>
-  <li>3: 서쪽</li>
-</ul>
-
-<p>셋째 줄부터 맵이 육지인지 바다인지에 대한 정보가 주어진다. N개의 줄에 맵의 상태가 북쪽부터 남쪽 순서대로, 각 줄의 데이터는  <br />
-서쪽부터 동쪽 순서대로 주어진다. 맵의 외괵은 항상 바다로 되어 있다.  <br /></p>
-
-<ul>
-  <li>0: 육지 <br /></li>
-  <li>1: 바다 <br /></li>
-</ul>
-
-<p>처음에 게임 캐릭터가 위치한 칸의 상태는 항상 육지이다. <br />
-출력조건: 첫째 줄에 이동을 마친후 캐릭터가 방문한 칸의 수를 출력 <br /></p>
-
-<hr />
-
-<p><b> 입력 예시 </b> <br />
-4 4 <br />
-1 1 0 <br />
-1 1 1 1 <br />
-1 0 0 1 <br />
-1 1 0 1 <br />
-1 1 1 1</p>
-
-<p><b> 출력 예시 </b> <br />
-3</p>
-<hr />
-
-<p>구현에 앞서 값들을 받아오는 작업을 수행해야합니다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">n</span><span class="p">,</span><span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
-
-</code></pre></div></div>
-
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#codingtest" class="page__taxonomy-item" rel="tag">codingtest</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#codingtest" class="page__taxonomy-item" rel="tag">codingtest</a>
-    
-    </span>
-  </p>
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-07-28T00:00:00+09:00">July 28, 2021</time></p>
-
-
-      </footer>
-
-      <section class="page__share">
-  
-    <h4 class="page__share-title">공유하기</h4>
-  
-
-  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9D%B4%EA%B2%83%EC%9D%B4+%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8B%A4+with++Python%5D02.%EA%B2%8C%EC%9E%84+%EA%B0%9C%EB%B0%9C%20http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest%28%25EA%25B2%258C%25EC%259E%2584%25EA%25B0%259C%25EB%25B0%259C%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest%28%25EA%25B2%258C%25EC%259E%2584%25EA%25B0%259C%25EB%25B0%259C%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest%28%25EA%25B2%258C%25EC%259E%2584%25EA%25B0%259C%25EB%25B0%259C%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-</section>
-
-
-      
-  <nav class="pagination">
-    
-      <a href="/sql/SQL(2)/" class="pagination--pager" title="[SQL 정복하기]테이블에서 데이터 검색
-">이전</a>
-    
-    
-      <a href="/codingtest/codingtest(DFS-%EC%98%88%EC%A0%9C)/" class="pagination--pager" title="[이것이 코딩테스트다 with  Python]03.DFS 예제
-">다음</a>
-    
-  </nav>
-
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h4 class="page__related-title">참고</h4>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/python/Python(1)/" rel="permalink">[Python - matplotlib] 01.box-plot
-</a>
-      
-    </h2>
-    
 
   <p class="page__meta">
     
@@ -482,11 +298,106 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">box-plot 이해
-</p>
-  </article>
-</div>
+        </header>
+      
 
+      <section class="page__content" itemprop="text">
+        
+        <p><b>박스 플롯 또는 박스-위스커 플롯 (Box - Whisker plot)</b>은 수치 데이터를 표현하는 하나의 방식입니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/59076539/200118910-ce65642a-6a9b-41de-9668-78e050a04aec.png" alt="box-plot" /></p>
+
+<p>일반적으로 박스 플롯은 전체 데이터로부터 얻어진 아래의 다섯가지 요약 수치를 사용해서 그려집니다.</p>
+
+<ol>
+  <li>최솟값</li>
+  <li>제 1사분위 수</li>
+  <li>제 3사분위 수</li>
+  <li>최댓값</li>
+</ol>
+
+<p>사분위 수는 데이터를 4등분한 지점을 의미합니다. 예를 들어, 제 1사분위 수는 전체 데이터 중 하위 25%에 해당하는 값이고
+제 3사분위 수는</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#python" class="page__taxonomy-item" rel="tag">python</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#python" class="page__taxonomy-item" rel="tag">python</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2022-11-05T00:00:00+09:00">November 5, 2022</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BPython+-+matplotlib%5D+01.box-plot%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2FPython%281%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2FPython%281%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2FPython%281%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/sql/SQL(1)/" class="pagination--pager" title="[SQL 정복하기]데이터 변환함수 및 헷갈리는 표현
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
         
           
 
@@ -578,6 +489,46 @@
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/codingtest/codingtest(BFS-%EC%98%88%EC%A0%9C)/" rel="permalink">[이것이 코딩테스트다 with  Python]04.BFS 예제
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">이것이 코딩테스트다 with  Python
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/codingtest/codingtest(DFS-%EC%98%88%EC%A0%9C)/" rel="permalink">[이것이 코딩테스트다 with  Python]03.DFS 예제
 </a>
       
     </h2>

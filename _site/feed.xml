@@ -1,53 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-04T19:29:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">포뇨의 애옥살이</title><subtitle>Welcome to my homepage!</subtitle><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><entry><title type="html">[SAS 정복하기]DATA SET 활용</title><link href="http://localhost:4000/sas/SAS(1)/" rel="alternate" type="text/html" title="[SAS 정복하기]DATA SET 활용" /><published>2022-07-03T00:00:00+09:00</published><updated>2022-07-03T00:00:00+09:00</updated><id>http://localhost:4000/sas/SAS(1)</id><content type="html" xml:base="http://localhost:4000/sas/SAS(1)/">&lt;p&gt;안녕하세요 포뇨입니다.
-이번에는 SAS에 대해서 갼략하게 설명 후 바로 문법적으로 설명드리도록 하겠습니다.
-SAS는 기본적으로 SQL 문법과 매우 흡사하고 특히 금융권 취업을 희망하면 기본적으로 알아야하는 툴입니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-05T21:17:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">포뇨의 애옥살이</title><subtitle>Welcome to my homepage!</subtitle><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><entry><title type="html">[Python - matplotlib] 01.box-plot</title><link href="http://localhost:4000/python/Python(1)/" rel="alternate" type="text/html" title="[Python - matplotlib] 01.box-plot" /><published>2022-11-05T00:00:00+09:00</published><updated>2022-11-05T00:00:00+09:00</updated><id>http://localhost:4000/python/Python(1)</id><content type="html" xml:base="http://localhost:4000/python/Python(1)/">&lt;p&gt;&lt;b&gt;박스 플롯 또는 박스-위스커 플롯 (Box - Whisker plot)&lt;/b&gt;은 수치 데이터를 표현하는 하나의 방식입니다.&lt;/p&gt;
 
-&lt;p&gt;그러면 첫 단원으로 DATA SET을 활용하여 문법을 익혀보도록 하겠습니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/59076539/200118910-ce65642a-6a9b-41de-9668-78e050a04aec.png&quot; alt=&quot;box-plot&quot; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;1-data-set-생성13&quot;&gt;1. DATA SET 생성(1/3)&lt;/h1&gt;
-&lt;p&gt;기존 DATA문&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DATA AAA;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;일반적으로 박스 플롯은 전체 데이터로부터 얻어진 아래의 다섯가지 요약 수치를 사용해서 그려집니다.&lt;/p&gt;
 
-&lt;h1 id=&quot;2-data-set-생성23&quot;&gt;2. DATA SET 생성(2/3)&lt;/h1&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;data stockprice1; &amp;lt;br&amp;gt;
-input name$price ; &amp;lt;br&amp;gt;
-cards;&amp;lt;br&amp;gt;
-삼성전자 1100&amp;lt;br&amp;gt;
-LG전자 6000&amp;lt;br&amp;gt;
-NC소프트 4000&amp;lt;br&amp;gt;
-대한항공 5000&amp;lt;br&amp;gt;
-아시아나항공 500&amp;lt;br&amp;gt;
-;&amp;lt;br&amp;gt;
-run;&amp;lt;br&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;주의해할 점은 변수는 숫자로 된 변수가 있고 문자로된 변수가 있는데
-기업이름 같은 경우는 수치적 데이터가 아니므로 문자변수이다.
-&lt;b&gt; 문자변수를 정의할 때는 변수명 뒤에 $를 붙여주어야한다.&lt;/b&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;최솟값&lt;/li&gt;
+  &lt;li&gt;제 1사분위 수&lt;/li&gt;
+  &lt;li&gt;제 3사분위 수&lt;/li&gt;
+  &lt;li&gt;최댓값&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;h1 id=&quot;3-data-set-생성33&quot;&gt;3. DATA SET 생성(3/3)&lt;/h1&gt;
-&lt;p&gt;이미 생성된 DATA SET에서 일부 특성에 맞는 자료만을 추출하여 분석하고자 할 때, 또는 생성된 하나 또는 여러개의 DAT SET으로부터 새로운
-DATA SET을 생성하고자 한다.&lt;/p&gt;
-
-&lt;p&gt;’’’
-/* 변환 */
-DATA AAA;
- SET BBB;
-  원금 = 상환금액 - 이자금액;
-  RUN;&lt;/p&gt;
-
-&lt;p&gt;/* 추출 */
-DATA AAA;
- SET BBB;
-  IF 싱테 = ‘연체’;
-RUN;&lt;/p&gt;
-
-&lt;p&gt;/* 병합 */
-DATA AAA;
- SET BBB CCC;
-RUN;&lt;/p&gt;
-
-&lt;p&gt;’’’&lt;/p&gt;</content><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><category term="SAS" /><category term="SAS" /><summary type="html">SAS 첫 걸음</summary></entry><entry><title type="html">[SQL 정복하기]데이터 변환함수 및 헷갈리는 표현</title><link href="http://localhost:4000/sql/SQL(1)/" rel="alternate" type="text/html" title="[SQL 정복하기]데이터 변환함수 및 헷갈리는 표현" /><published>2022-07-03T00:00:00+09:00</published><updated>2022-07-03T00:00:00+09:00</updated><id>http://localhost:4000/sql/SQL(1)</id><content type="html" xml:base="http://localhost:4000/sql/SQL(1)/">&lt;p&gt;입사 후 교육을 듣는데 헷갈리는 표현들이 몇 가지 존재했습니다. 이 부분을 정확히 숙지하고 업무에 투입되면 좋을 것 같아 포스팅을 진행해보도도록 하겠습니다.&lt;/p&gt;
+&lt;p&gt;사분위 수는 데이터를 4등분한 지점을 의미합니다. 예를 들어, 제 1사분위 수는 전체 데이터 중 하위 25%에 해당하는 값이고
+제 3사분위 수는&lt;/p&gt;</content><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><category term="python" /><category term="python" /><summary type="html">box-plot 이해</summary></entry><entry><title type="html">[SQL 정복하기]데이터 변환함수 및 헷갈리는 표현</title><link href="http://localhost:4000/sql/SQL(1)/" rel="alternate" type="text/html" title="[SQL 정복하기]데이터 변환함수 및 헷갈리는 표현" /><published>2022-07-03T00:00:00+09:00</published><updated>2022-07-03T00:00:00+09:00</updated><id>http://localhost:4000/sql/SQL(1)</id><content type="html" xml:base="http://localhost:4000/sql/SQL(1)/">&lt;p&gt;입사 후 교육을 듣는데 헷갈리는 표현들이 몇 가지 존재했습니다. 이 부분을 정확히 숙지하고 업무에 투입되면 좋을 것 같아 포스팅을 진행해보도도록 하겠습니다.&lt;/p&gt;
 
 &lt;h1 id=&quot;1-to_char&quot;&gt;1. TO_CHAR&lt;/h1&gt;
 &lt;p&gt;TO_CHAR는 숫자 또는 날짜를 문자타입으로 변환시켜주는 함수입니다.&lt;/p&gt;
@@ -83,7 +48,59 @@ FROM  (
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;인라인뷰의 경우 지금 예시는 비교적 간단해서 복잡해지면 가독성이 현저히 떨어진다는 단점이 존재합니다.&lt;br /&gt;
 이에 반해 내부적으로는 퍼포먼스는 비교적 훌륭하다고 볼 수 있습니다.&lt;br /&gt;
-이렇게 두 기지 문법을 살펴보았습니다.&lt;/p&gt;</content><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><category term="SQL" /><category term="SQL" /><category term="Oracle" /><summary type="html">SQL 첫 걸음</summary></entry><entry><title type="html">[이것이 코딩테스트다 with Python]04.BFS 예제</title><link href="http://localhost:4000/codingtest/codingtest(BFS-%EC%98%88%EC%A0%9C)/" rel="alternate" type="text/html" title="[이것이 코딩테스트다 with Python]04.BFS 예제" /><published>2021-08-04T00:00:00+09:00</published><updated>2021-08-04T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/codingtest(BFS%20%EC%98%88%EC%A0%9C)</id><content type="html" xml:base="http://localhost:4000/codingtest/codingtest(BFS-%EC%98%88%EC%A0%9C)/">&lt;p&gt;저번 chapter에 이이서 이번에는 BFS를 구현해보도록 하겠습니다. 너비 우선 탐색 알고리즘은 &lt;br /&gt;
+이렇게 두 기지 문법을 살펴보았습니다.&lt;/p&gt;</content><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><category term="SQL" /><category term="SQL" /><category term="Oracle" /><summary type="html">SQL 첫 걸음</summary></entry><entry><title type="html">[SAS 정복하기]DATA SET 활용</title><link href="http://localhost:4000/sas/SAS(1)/" rel="alternate" type="text/html" title="[SAS 정복하기]DATA SET 활용" /><published>2022-07-03T00:00:00+09:00</published><updated>2022-07-03T00:00:00+09:00</updated><id>http://localhost:4000/sas/SAS(1)</id><content type="html" xml:base="http://localhost:4000/sas/SAS(1)/">&lt;p&gt;안녕하세요 포뇨입니다.
+이번에는 SAS에 대해서 갼략하게 설명 후 바로 문법적으로 설명드리도록 하겠습니다.
+SAS는 기본적으로 SQL 문법과 매우 흡사하고 특히 금융권 취업을 희망하면 기본적으로 알아야하는 툴입니다.&lt;/p&gt;
+
+&lt;p&gt;그러면 첫 단원으로 DATA SET을 활용하여 문법을 익혀보도록 하겠습니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;1-data-set-생성13&quot;&gt;1. DATA SET 생성(1/3)&lt;/h1&gt;
+&lt;p&gt;기존 DATA문&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DATA AAA;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;2-data-set-생성23&quot;&gt;2. DATA SET 생성(2/3)&lt;/h1&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;data stockprice1;
+input name$price ; 
+cards;
+삼성전자 1100
+LG전자 6000
+NC소프트 4000
+대한항공 5000
+아시아나항공 500
+;
+run;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;주의해할 점은 변수는 숫자로 된 변수가 있고 문자로된 변수가 있는데
+기업이름 같은 경우는 수치적 데이터가 아니므로 문자변수이다. &lt;br /&gt;
+&lt;b&gt; 문자변수를 정의할 때는 변수명 뒤에 $를 붙여주어야한다.&lt;/b&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;3-data-set-생성33&quot;&gt;3. DATA SET 생성(3/3)&lt;/h1&gt;
+&lt;p&gt;이미 생성된 DATA SET에서 일부 특성에 맞는 자료만을 추출하여 분석하고자 할 때, 또는 생성된 하나 또는 여러개의 DAT SET으로부터 새로운
+DATA SET을 생성하고자 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/* 변환 */
+DATA AAA;
+ SET BBB;
+  원금 = 상환금액 - 이자금액;
+  RUN;
+
+/* 추출 */
+DATA AAA;
+ SET BBB;
+  IF 싱테 = &apos;연체&apos;;
+RUN;
+
+/* 병합 */
+DATA AAA;
+ SET BBB CCC;
+RUN;
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이것으로 기본적인 SAS 문법을 알아보았습니다.
+다음으로 좀 더 심화된 내용을 포스팅을 진행해보겠습니다.&lt;/p&gt;</content><author><name>jerryPark</name><email>pjhun588@gmail.com</email></author><category term="SAS" /><category term="SAS" /><summary type="html">SAS 첫 걸음</summary></entry><entry><title type="html">[이것이 코딩테스트다 with Python]04.BFS 예제</title><link href="http://localhost:4000/codingtest/codingtest(BFS-%EC%98%88%EC%A0%9C)/" rel="alternate" type="text/html" title="[이것이 코딩테스트다 with Python]04.BFS 예제" /><published>2021-08-04T00:00:00+09:00</published><updated>2021-08-04T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/codingtest(BFS%20%EC%98%88%EC%A0%9C)</id><content type="html" xml:base="http://localhost:4000/codingtest/codingtest(BFS-%EC%98%88%EC%A0%9C)/">&lt;p&gt;저번 chapter에 이이서 이번에는 BFS를 구현해보도록 하겠습니다. 너비 우선 탐색 알고리즘은 &lt;br /&gt;
 큐 자료구조에 기초한다는 점과 탐색을 수행함에 있어 O(N)의 시간이 소요된다. &lt;br /&gt;
 일반적인 경우 실제 DFS보다 수행하는 시간이 효율적임을 알 수 있다.&lt;/p&gt;
 

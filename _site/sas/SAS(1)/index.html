@@ -315,44 +315,47 @@ SAS는 기본적으로 SQL 문법과 매우 흡사하고 특히 금융권 취업
 </code></pre></div></div>
 
 <h1 id="2-data-set-생성23">2. DATA SET 생성(2/3)</h1>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data stockprice1; &lt;br&gt;
-input name$price ; &lt;br&gt;
-cards;&lt;br&gt;
-삼성전자 1100&lt;br&gt;
-LG전자 6000&lt;br&gt;
-NC소프트 4000&lt;br&gt;
-대한항공 5000&lt;br&gt;
-아시아나항공 500&lt;br&gt;
-;&lt;br&gt;
-run;&lt;br&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data stockprice1;
+input name$price ; 
+cards;
+삼성전자 1100
+LG전자 6000
+NC소프트 4000
+대한항공 5000
+아시아나항공 500
+;
+run;
 </code></pre></div></div>
 <p>주의해할 점은 변수는 숫자로 된 변수가 있고 문자로된 변수가 있는데
-기업이름 같은 경우는 수치적 데이터가 아니므로 문자변수이다.
+기업이름 같은 경우는 수치적 데이터가 아니므로 문자변수이다. <br />
 <b> 문자변수를 정의할 때는 변수명 뒤에 $를 붙여주어야한다.</b></p>
 
 <h1 id="3-data-set-생성33">3. DATA SET 생성(3/3)</h1>
 <p>이미 생성된 DATA SET에서 일부 특성에 맞는 자료만을 추출하여 분석하고자 할 때, 또는 생성된 하나 또는 여러개의 DAT SET으로부터 새로운
 DATA SET을 생성하고자 한다.</p>
 
-<p>’’’
-/* 변환 */
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* 변환 */
 DATA AAA;
  SET BBB;
   원금 = 상환금액 - 이자금액;
-  RUN;</p>
+  RUN;
 
-<p>/* 추출 */
+/* 추출 */
 DATA AAA;
  SET BBB;
-  IF 싱테 = ‘연체’;
-RUN;</p>
+  IF 싱테 = '연체';
+RUN;
 
-<p>/* 병합 */
+/* 병합 */
 DATA AAA;
  SET BBB CCC;
-RUN;</p>
+RUN;
 
-<p>’’’</p>
+
+</code></pre></div></div>
+
+<p>이것으로 기본적인 SAS 문법을 알아보았습니다.
+다음으로 좀 더 심화된 내용을 포스팅을 진행해보겠습니다.</p>
 
 
         
@@ -435,6 +438,46 @@ RUN;</p>
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Python(1)/" rel="permalink">[Python - matplotlib] 01.box-plot
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">box-plot 이해
+</p>
+  </article>
+</div>
+
         
           
 
@@ -544,46 +587,6 @@ RUN;</p>
         <i class="far fa-clock" aria-hidden="true"></i>
         
           최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">이것이 코딩테스트다 with  Python
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/codingtest/codingtest(%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C)/" rel="permalink">[이것이 코딩테스트다 with  Python]02.게임 개발
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
         
       </span>
     
