@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "포뇨의 애옥살이"
+title                    : "곰도리의 애옥살이"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "jerryPark"
@@ -102,7 +102,7 @@ analytics:
 # Site Author
 author:
   name             : "jerryPark"
-  avatar           :  "/assets/images/setting/bio-photo.png" # e.g. "/assets/images/bio-photo.jpg"
+  avatar           :  "/assets/images/setting/bear.png" # e.g. "/assets/images/bio-photo.jpg"
   bio              : "Just do it"
   location         : "South Korea"
   email            : "pjhun588@gmail.com"

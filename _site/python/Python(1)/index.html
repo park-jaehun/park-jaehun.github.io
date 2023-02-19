@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Python - matplotlib] 01.box-plot - 포뇨의 애옥살이</title>
+<!-- begin _includes/seo.html --><title>[Python - matplotlib] 01.box-plot - 곰돌이의 애옥살이</title>
 <meta name="description" content="box-plot 이해">
 
 
@@ -21,7 +21,7 @@
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:site_name" content="포뇨의 애옥살이">
+<meta property="og:site_name" content="곰돌이의 애옥살이">
 <meta property="og:title" content="[Python - matplotlib] 01.box-plot">
 <meta property="og:url" content="http://localhost:4000/python/Python(1)/">
 
@@ -71,7 +71,7 @@
 
 
 
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="포뇨의 애옥살이 Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="곰돌이의 애옥살이 Feed">
 
 
 <!-- https://t.co/dKP3o1e -->
@@ -117,7 +117,7 @@
       <nav id="site-nav" class="greedy-nav">
         
         <a class="site-title" href="/">
-          포뇨의 애옥살이
+          곰돌이의 애옥살이
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
@@ -153,7 +153,7 @@
   
     <div class="author__avatar">
       
-        <img src="/assets/images/setting/bio-photo.png" alt="jerryPark" itemprop="image">
+        <img src="/assets/images/setting/bear.png" alt="jerryPark" itemprop="image">
       
     </div>
   
@@ -316,8 +316,23 @@
   <li>최댓값</li>
 </ol>
 
-<p>사분위 수는 데이터를 4등분한 지점을 의미합니다. 예를 들어, 제 1사분위 수는 전체 데이터 중 하위 25%에 해당하는 값이고
-제 3사분위 수는</p>
+<p>box-plot을 사용하면 하나 이상의 데이터 세트를 빠르게 그래픽으로 검사할 수 있습니다.
+box-plot은 적은 공간을 차지하므로 여러 그룹 또는 데이터 세트 사이의 분포를 비교할 때 특히 유용합니다.</p>
+
+<p>사분위 수는 데이터를 4등분한 지점을 의미합니다. 예를 들어, 제 1사분위 수는 전체 데이터 중 하위 25%에 해당하는 값이고</p>
+
+<p><b>그리는 방법 </b></p>
+<ol>
+  <li>주어진 데이터에서 각 사분위 수를 계산한다.</li>
+  <li>그래프에서 제 1사분위수와 제 3사분위를 밑변으로 하는 직사각형을 그리고, 제 2사분위에 해당하는 위채에 선분을 긋는다.</li>
+  <li>사분위수 범위(IQR, Q3 - Q1)를 계산한다.</li>
+  <li>Q3과 차이가 1.5IQR 이내인 값 중에서 최댓값을 Q3과 직선으로 연결하고, 마찬가지로 Q1과 차이가 1.5IQR 이내인 값 중에서 최솟값을 Q1과 연결한다.</li>
+  <li>Q3보다  1.5IQR 이상 초과하는 값과 Q1 보다 Q1보다 1.5IQR 이상 미달하는 값은 점이나 원, 별표 등으로 따로 표시한다.(이상치 점)</li>
+</ol>
+
+<p>box-plot에 대해서 몇 가지 알아보았습니다. 이를 계기로 그래프를 정확히 이해하고 해석할 수 있는 좋은 계기가 되었습니다.
+이는 위키백과를 참고하여 작성하였습니다.</p>
+
 
         
       </section>
@@ -384,7 +399,8 @@
 ">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/sas/SAS(2)/" class="pagination--pager" title="[SAS 정복하기]SAS 전환 가이드
+">다음</a>
     
   </nav>
 
@@ -398,6 +414,46 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sas/SAS(2)/" rel="permalink">[SAS 정복하기]SAS 전환 가이드
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">SAS 첫 걸음
+</p>
+  </article>
+</div>
+
         
           
 
@@ -519,46 +575,6 @@
 </div>
 
         
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/codingtest/codingtest(DFS-%EC%98%88%EC%A0%9C)/" rel="permalink">[이것이 코딩테스트다 with  Python]03.DFS 예제
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">이것이 코딩테스트다 with  Python
-</p>
-  </article>
-</div>
-
-        
       </div>
     </div>
   
@@ -598,7 +614,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2022 jerryPark. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2023 jerryPark. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

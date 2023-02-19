@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[이것이 코딩테스트다 with  Python]04.BFS 예제 - 곰돌이의 애옥살이</title>
-<meta name="description" content="이것이 코딩테스트다 with  Python">
+<!-- begin _includes/seo.html --><title>[SAS 정복하기]SAS 전환 가이드 - 곰돌이의 애옥살이</title>
+<meta name="description" content="SAS 첫 걸음">
 
 
   <meta name="author" content="jerryPark">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="곰돌이의 애옥살이">
-<meta property="og:title" content="[이것이 코딩테스트다 with  Python]04.BFS 예제">
-<meta property="og:url" content="http://localhost:4000/codingtest/codingtest(BFS-%EC%98%88%EC%A0%9C)/">
+<meta property="og:title" content="[SAS 정복하기]SAS 전환 가이드">
+<meta property="og:url" content="http://localhost:4000/sas/SAS(2)/">
 
 
-  <meta property="og:description" content="이것이 코딩테스트다 with  Python">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-08-04T00:00:00+09:00">
+  <meta property="og:description" content="SAS 첫 걸음">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2023-02-19T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/codingtest/codingtest(BFS-%EC%98%88%EC%A0%9C)/">
+
+<link rel="canonical" href="http://localhost:4000/sas/SAS(2)/">
 
 
 
@@ -267,15 +267,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[이것이 코딩테스트다 with  Python]04.BFS 예제">
-    <meta itemprop="description" content="이것이 코딩테스트다 with  Python">
-    <meta itemprop="datePublished" content="2021-08-04T00:00:00+09:00">
+    <meta itemprop="headline" content="[SAS 정복하기]SAS 전환 가이드">
+    <meta itemprop="description" content="SAS 첫 걸음">
+    <meta itemprop="datePublished" content="2023-02-19T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[이것이 코딩테스트다 with  Python]04.BFS 예제
+          <h1 id="page-title" class="page__title" itemprop="headline">[SAS 정복하기]SAS 전환 가이드
 </h1>
           
 
@@ -303,23 +303,76 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>저번 chapter에 이이서 이번에는 BFS를 구현해보도록 하겠습니다. 너비 우선 탐색 알고리즘은 <br />
-큐 자료구조에 기초한다는 점과 탐색을 수행함에 있어 O(N)의 시간이 소요된다. <br />
-일반적인 경우 실제 DFS보다 수행하는 시간이 효율적임을 알 수 있다.</p>
+        <p><br />
+안녕하세요 곰도리입니다.   &lt;/br&gt; 
+이번에는 SAS-&gt; SQL 전환 가이드에 대해서 설명해보도록 하겠습니다. <br />
+우선, SAS에서 SQL로 왜? 전환해야하는지 의문이 들 수 있습니다.
+전환 이유는 전체 분석시간을 단축하고, SAS 부하 절감 시키기 위해서 입니다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collection</span> <span class="kn">import</span> <span class="n">deque</span>
-<span class="k">def</span> <span class="nf">BFS</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">visited</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
-    <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="n">start</span><span class="p">])</span>
-    <span class="n">visited</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
-        <span class="n">v</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
-                <span class="n">queue</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-                <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s">" "</span><span class="p">)</span>
+<h1 id="1-기본-함수17">1. 기본 함수(1/7)</h1>
+
+<dl>
+  <dt>문자열 일부 추출</dt>
+  <dd>SUBSTR(변수, 시작위치, 길이) 
+ -&gt; SAS</dd>
+  <dd>
+    <p>SUBSTR(변수, 시작위치, 길이)
+-&gt; SQL</p>
+  </dd>
+  <dt>문자 연결</dt>
+  <dd>|| CAT(변수1, 변수2 ….)
+-&gt;  SAS</dd>
+  <dt>문자 연결</dt>
+  <dd>CONCAT(변수1, 변수2)</dd>
+  <dt>공백 제거</dt>
+  <dd>TRIM(변수) COMPRESS(변수)
+-&gt; SQL</dd>
+  <dt>공백 제거</dt>
+  <dd>RTRIM(변수) TRIM(변수)</dd>
+  <dt>NULL 값 대체</dt>
+  <dd>COALESCE(변수, 대체할 값)
+-&gt; SAS</dd>
+  <dt>NULL 값 대체</dt>
+  <dd>NVL(변수, 대체할 값)
+-&gt; SQL</dd>
+</dl>
+
+<h1 id="2-date--time-함수">2. DATE &amp; TIME 함수</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TODAY() 01SEP2016
+
+INTCK('DAY',시작하는날짜,끝나는날짜)    1047
+INTCK('DAY',STARTDATE, ENDDATE) 34
+INTNX('MONTH',기준날짜, 증감분) 01NOV2016
+
+PUT(날짜형변수, YYMMDDn8.) 20160901
+PUT(날짜형변수, YYMMn6.) 201611
+
 
 </code></pre></div></div>
+
+<h1 id="3-intck-vs--months_between">3. INTCK vs  MONTHS_BETWEEN</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATA A;
+R1 = INTCK('MONTH',''01SEP2016'd, '01DEC2016'd); 3
+R2 = INCK('MONTH', '01SEP2016'd,15DEC2016'd); 3
+RUN;
+// SAS
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT
+MONTHS_BETWEEN('2016-12-01','2016-09-01') 3
+,MONTHS_BETWEEN('2016-12-15','2016-09-01') 3.45....
+FROM ...
+//SQL
+</code></pre></div></div>
+
+<p>결론을 말하자면 SAS에서는 모두 경과개월 수 3으로 수렴하지만
+SQL의 경우 소수까지 반환한기 때문에 이 부분을 주의해서 전환해야한다.</p>
+
+<p>이상입니다.
+감사합니다.</p>
+
+<p>다음에는 더 알찬 컨텐츠로 찾도록 하겠습니다.</p>
 
 
         
@@ -337,7 +390,7 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#codingtest" class="page__taxonomy-item" rel="tag">codingtest</a>
+      <a href="/tags/#sas" class="page__taxonomy-item" rel="tag">SAS</a>
     
     </span>
   </p>
@@ -354,7 +407,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#codingtest" class="page__taxonomy-item" rel="tag">codingtest</a>
+      <a href="/categories/#sas" class="page__taxonomy-item" rel="tag">SAS</a>
     
     </span>
   </p>
@@ -362,7 +415,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-08-04T00:00:00+09:00">August 4, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2023-02-19T00:00:00+09:00">February 19, 2023</time></p>
 
 
       </footer>
@@ -372,23 +425,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9D%B4%EA%B2%83%EC%9D%B4+%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%8B%A4+with++Python%5D04.BFS+%EC%98%88%EC%A0%9C%20http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest%28BFS-%25EC%2598%2588%25EC%25A0%259C%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BSAS+%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0%5DSAS+%EC%A0%84%ED%99%98+%EA%B0%80%EC%9D%B4%EB%93%9C%20http%3A%2F%2Flocalhost%3A4000%2Fsas%2FSAS%282%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest%28BFS-%25EC%2598%2588%25EC%25A0%259C%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsas%2FSAS%282%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcodingtest%2Fcodingtest%28BFS-%25EC%2598%2588%25EC%25A0%259C%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsas%2FSAS%282%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/codingtest/codingtest(DFS-%EC%98%88%EC%A0%9C)/" class="pagination--pager" title="[이것이 코딩테스트다 with  Python]03.DFS 예제
+      <a href="/python/Python(1)/" class="pagination--pager" title="[Python - matplotlib] 01.box-plot
 ">이전</a>
     
     
-      <a href="/sas/SAS(1)/" class="pagination--pager" title="[SAS 정복하기]DATA SET 활용
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -402,46 +454,6 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/sas/SAS(2)/" rel="permalink">[SAS 정복하기]SAS 전환 가이드
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">SAS 첫 걸음
-</p>
-  </article>
-</div>
-
         
           
 
@@ -558,6 +570,46 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">SAS 첫 걸음
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/codingtest/codingtest(BFS-%EC%98%88%EC%A0%9C)/" rel="permalink">[이것이 코딩테스트다 with  Python]04.BFS 예제
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">이것이 코딩테스트다 with  Python
 </p>
   </article>
 </div>

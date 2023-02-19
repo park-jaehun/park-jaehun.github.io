@@ -42,8 +42,14 @@ var store = [{
         "teaser": null
       },{
         "title": "[Python - matplotlib] 01.box-plot",
-        "excerpt":"박스 플롯 또는 박스-위스커 플롯 (Box - Whisker plot)은 수치 데이터를 표현하는 하나의 방식입니다. 일반적으로 박스 플롯은 전체 데이터로부터 얻어진 아래의 다섯가지 요약 수치를 사용해서 그려집니다. 최솟값 제 1사분위 수 제 3사분위 수 최댓값 사분위 수는 데이터를 4등분한 지점을 의미합니다. 예를 들어, 제 1사분위 수는 전체 데이터 중 하위 25%에...","categories": ["python"],
+        "excerpt":"박스 플롯 또는 박스-위스커 플롯 (Box - Whisker plot)은 수치 데이터를 표현하는 하나의 방식입니다. 일반적으로 박스 플롯은 전체 데이터로부터 얻어진 아래의 다섯가지 요약 수치를 사용해서 그려집니다. 최솟값 제 1사분위 수 제 3사분위 수 최댓값 box-plot을 사용하면 하나 이상의 데이터 세트를 빠르게 그래픽으로 검사할 수 있습니다. box-plot은 적은 공간을 차지하므로 여러...","categories": ["python"],
         "tags": ["python"],
         "url": "/python/Python(1)/",
+        "teaser": null
+      },{
+        "title": "[SAS 정복하기]SAS 전환 가이드",
+        "excerpt":"안녕하세요 곰도리입니다. &lt;/br&gt; 이번에는 SAS-&gt; SQL 전환 가이드에 대해서 설명해보도록 하겠습니다. 우선, SAS에서 SQL로 왜? 전환해야하는지 의문이 들 수 있습니다. 전환 이유는 전체 분석시간을 단축하고, SAS 부하 절감 시키기 위해서 입니다. 1. 기본 함수(1/7) 문자열 일부 추출 SUBSTR(변수, 시작위치, 길이) -&gt; SAS SUBSTR(변수, 시작위치, 길이) -&gt; SQL 문자 연결 ||...","categories": ["SAS"],
+        "tags": ["SAS"],
+        "url": "/sas/SAS(2)/",
         "teaser": null
       }]
