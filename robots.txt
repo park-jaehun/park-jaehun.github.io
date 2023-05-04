@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://park-jaehun.github.io/sitemap.xml
