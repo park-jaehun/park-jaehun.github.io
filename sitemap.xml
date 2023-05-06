@@ -1,61 +1,30 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>http://localhost:4000/codingtest/codingtest(%EC%99%95%EC%8B%A4%EC%9D%98-%EB%82%98%EC%9D%B4%ED%8A%B8)/</loc>
-<lastmod>2021-07-24T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/sql/SQL(2)/</loc>
-<lastmod>2021-07-25T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/codingtest/codingtest(%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C)/</loc>
-<lastmod>2021-07-28T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/codingtest/codingtest(DFS-%EC%98%88%EC%A0%9C)/</loc>
-<lastmod>2021-08-03T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/codingtest/codingtest(BFS-%EC%98%88%EC%A0%9C)/</loc>
-<lastmod>2021-08-04T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/sas/SAS(1)/</loc>
-<lastmod>2022-07-03T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/sql/SQL(1)/</loc>
-<lastmod>2022-07-03T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/python/Python(1)/</loc>
-<lastmod>2022-11-05T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/sas/SAS(2)/</loc>
-<lastmod>2023-02-19T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/about/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/categories/SQL</loc>
-</url>
-<url>
-<loc>http://localhost:4000/categories/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/categories/codingtest</loc>
-</url>
-<url>
-<loc>http://localhost:4000/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/page2/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/googlefc68f9433116e748.html</loc>
-<lastmod>2022-01-01T16:58:05+09:00</lastmod>
-</url>
+  {% for post in site.posts %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      {% if post.lastmod == null %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
+      {% endif %}
+
+      {% if post.sitemap.changefreq == null %}
+        <changefreq>weekly</changefreq>
+      {% else %}
+        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+      {% endif %}
+
+      {% if post.sitemap.priority == null %}
+          <priority>0.5</priority>
+      {% else %}
+        <priority>{{ post.sitemap.priority }}</priority>
+      {% endif %}
+
+    </url>
+  {% endfor %}
 </urlset>
+
