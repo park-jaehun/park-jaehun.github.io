@@ -48,7 +48,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[SAS 정복하기]SAS 전환 가이드",
-        "excerpt":"안녕하세요 곰도리입니다. &lt;/br&gt; 이번에는 SAS-&gt; SQL 전환 가이드에 대해서 설명해보도록 하겠습니다. 우선, SAS에서 SQL로 왜? 전환해야하는지 의문이 들 수 있습니다. 전환 이유는 전체 분석시간을 단축하고, SAS 부하 절감 시키기 위해서 입니다. 1. 기본 함수(1/7) 문자열 일부 추출 SUBSTR(변수, 시작위치, 길이) -&gt; SAS SUBSTR(변수, 시작위치, 길이) -&gt; SQL 문자 연결 ||...","categories": ["SAS"],
+        "excerpt":"안녕하세요 곰도리입니다. 이번에는 SAS-&gt; SQL 전환 가이드에 대해서 설명해보도록 하겠습니다. 우선, SAS에서 SQL로 왜? 전환해야하는지 의문이 들 수 있습니다. 전환 이유는 전체 분석시간을 단축하고, SAS 부하 절감 시키기 위해서 입니다. 1. 기본 함수(1/7) 문자열 일부 추출 SUBSTR(변수, 시작위치, 길이) -&gt; SAS SUBSTR(변수, 시작위치, 길이) -&gt; SQL 문자 연결 || CAT(변수1,...","categories": ["SAS"],
         "tags": ["SAS"],
         "url": "/sas/SAS(2)/",
         "teaser": null
